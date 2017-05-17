@@ -1,1 +1,0 @@
-This is a puppet control repository.  Test commit
