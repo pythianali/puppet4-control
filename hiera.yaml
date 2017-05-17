@@ -1,0 +1,31 @@
+---
+  version: 5
+  defaults:
+    datadir: data
+    data_hash: yaml_data
+  hierarchy:
+    - name: "Per Node Data"
+      path: "fqdn/%{fqdn}.yaml"
+ 
+    - name: "Role"
+      path: "roles::%{roles}.yaml"
+
+    - name: "Common config"
+      path: "common.yaml"
+     
+ 
+
+#:backends:
+#  - yaml
+#:hierarchy:
+##  - "nodes/%{::trusted.certname}"
+#  -"fqdn/%{fqdn}"
+#  - common
+
+#:yaml:
+# datadir is empty here, so hiera uses its defaults:
+# - /etc/puppetlabs/code/environments/%{environment}/hieradata on *nix
+# - %CommonAppData%\PuppetLabs\code\environments\%{environment}\hieradata on Windows
+# When specifying a datadir, make sure the directory exists.
+#  :datadir: /etc/puppetlabs/code/environments/%{environment}/hieradata
+

@@ -1,0 +1,7 @@
+---
+# r10k
+  r10k::sources:
+    puppet:
+      remote: 'git@puppet.example.com:root/puppet.git'
+      basedir: "%{::settings::codedir}/environments"
+

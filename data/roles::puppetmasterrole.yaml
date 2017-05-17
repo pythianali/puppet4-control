@@ -1,0 +1,133 @@
+---
+# Puppet
+  puppet::server: true
+  puppet::server_environments: []
+  puppet::server_foreman: true
+  puppet::server_implementation: puppetserver
+
+  # SSH Keys
+  sshkeys:
+    puppethost_rsa:
+      path: /root/.ssh/puppethost_rsa
+      ensure: present
+      owner: root
+      group: root
+      mode: '0600'
+      content: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEowIBAAKCAQEAtjN1RkclJr5QH+hWDBEt2IZl/Ppw9DjZdtN+XSCuRctiSF7L
+        iq2T+duigNSqtdCBQoUYSQGCFV1frB1FKVwIbSw40CXH4LjCydJ69Sf167Bw71ek
+        KmGzSwBEXZvqEZ4+03GUVA9xGM1XwLP5OE3S+MtDiSpsOygBtcQBW/wIDyTsF1XM
+        FdNta7reMKaW8KbvAoqgyf+AxhjKR9OGavPWHmTuCN3zalt2KYt+k88wrlLakRLu
+        zYo8yWuroE4/7osgsooh/hl7ItSNNMnccYclR1Fkc4y14h+1HRtLNJS8wUKHkXIy
+        9N1nM5xzI5rLg4vhcOHIyYFqWQFFY1v36xYa0QIDAQABAoIBACbQNXZgJ4jmV9lE
+        PDhb3IFYuBc5HqDYD3NhwHSERru1hN1X3FJRgcljQW3iX+9VWIPcKH085gI5Hu1i
+        Wt5hraXcGso0kizMDyrBPNJGzfuEXbqO1/jzUSd0ChxK34UbSdTvSCLUG0qmS8BQ
+        VpHo+j1nx55LvDyp3BtlgsiemvTmk3m91uk5qiY64qEKTzNfm/PrjEkgKCthmva/
+        V30U6kwpD4iiEv4N+FiAWnlVgYklXtAG919i4cfGREL2ketlQ3VH2ION67jcl2tZ
+        jfDkWI21ZjXI1D9RKU57mW2K/+eyenmQb9PMN9QjXD0Z2wII7KaeAgoMlsATJfba
+        VPHTX4UCgYEA5WjHqo7ILC7faj2v4HAXmkT0BsvwQ+WcAGLKY/IvtI+IPgpN5ScY
+        sPhD9NyRbTENi+olvrltBlZfuiAMKPm7wQ/t7F8PCxAY6G/isrGXkRU11BAcWjxq
+        P7mZuKZRmk1GUM09np/epMjhLGE1IwB1bof6alWaTZDwhpo0zh7aJIcCgYEAy1Hg
+        EO54pTGK9PyJYm8NPmo9BcOFNhnLSDqNilLWlttuETQO71OCBl8EVYRD7VvOzBrp
+        KirroH9U2YyHUC+hkilTNuXCAJuX06OalVLToB0YNbpaxmbE+ncg1EWtaAv4zNV/
+        pKEOK1CwmPRrDBnouQBc4J/mSnujtsXGCXeV8+cCgYARTmZBp6PSMXcJPL4X4Fzn
+        dmwyVxA5DwlFvi4mfA69QFa213Ao6Vojf5cg0cLmydyLwY43ZSWkZL+z+tbwAGb5
+        mYoJWuJ3oy892bLwaBVXDJKS/OQmqogZZpcCJwng6hNz5QfQ/558L+tMvciUa2Rw
+        gjGR9AM/9r8uaFOzeQBb4QKBgQCJOVFJHCpBFBb9EhSHYvxFS96zrSqTQQV6UkqF
+        OTOrzZ2T7tbFoE75jdeXABX4dSY1i1QjKaSuRkI2MiqBbCRYSZvoSVmOn3TxWlJS
+        xfwe7IQSfxwVG/eGNDDsE7rdpnbdiJsFuc2eXm9STGSTXkk704rb8A+15YyxJvpq
+        GVQTsQKBgFfHmT2E5QOVXr2fZN2ZtQEK+6XtexNAhWpUAYdsQVXQ9N66KRrqxoNU
+        QsMKs4ibToQHOiZzj0n5QSamxtRLAHXkPfKZAB2lioZgLixeGnNmWoQcV2cSEx7m
+        n3Uv8Tmi2hrWGBsuOQ8OI5CwwfPxxCwKtRSKrq9ywBR+g96fPLem
+        -----END RSA PRIVATE KEY-----
+    puppethost_rsa_pub:
+      path: /root/.ssh/puppethost_rsa.pub
+      ensure: present
+      owner: root
+      group: root
+      mode: '0600'
+      content: |
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2M3VGRyUmvlAf6FYMES3YhmX8+nD0ONl2035dIK5Fy2JIXsuKrZP526KA1Kq10IFChRhJAYIVXV+sHUUpXAhtLDjQJcfguMLJ0nr1J/XrsHDvV6QqYbNLAERdm+oRnj7TcZRUD3EYzVfAs/k4TdL4y0OJKmw7KAG1xAFb/AgPJOwXVcwV021rut4wppbwpu8CiqDJ/4DGGMpH04Zq89YeZO4I3fNqW3Ypi36TzzCuUtqREu7NijzJa6ugTj/uiyCyiiH+GXsi1I00ydxxhyVHUWRzjLXiH7UdG0s0lLzBQoeRcjL03WcznHMjmsuDi+Fw4cjJgWpZAUVjW/frFhrR
+    puppetdeploy_rsa:
+      path: /root/.ssh/puppetdeploy_rsa
+      ensure: present
+      owner: root
+      group: root
+      mode: '0600'
+      content: |
+        -----BEGIN RSA PRIVATE KEY-----
+        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
+        -----END RSA PRIVATE KEY-----    
+    puppetdeploy_rsa_pub:
+      path: /root/.ssh/puppetdeploy_rsa.pub
+      ensure: present
+      owner: root
+      group: root
+      mode: '0600'
+      content: |
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEjnuthVDM+MmLQp1IU33wlN7LVjITV9UONWkcEh7KD/MIkJujOQVpIGf557DmVppF35jP1ksc9fQIcobXjihnpAG2rCoyf2fAmy5zkTpS2chCoUW1dWxe3pc0bj8f9ifcEgF+ctxUoOHmzgSxp/m1HCKA5vDxff88xGIDgtl0zM81bpB758T3m0dIxVsgmpmCcvV0Q8KbQRCbPm/Z5bz0i/UOE4WjuI18UeDtCorEG5Yi1KdfkAtAzkK78I75qe66lfw5b9onytut4KSebIpF87GeyLgAMD52vQSCYlmfU/2V1nPasXHA3itelNgvoV2bLA91kTtkCVzMTq7xRL3OySSjHVIj5SkREsUT4jcbsWY+6R/WmDeZ3iV7kxhh6Ye/dd/LU0HCszKKO9BvayNABXl8EyE0aT/XOYF9ZpNBdwlLkDEWA8ZZGtT4EN3rInilIKQWkHZOYms4P/Uf8J5VMIcN2FNmeYEoQzzGHp6Jo0HZKjjldOofqXaWNsAx0QSelxUuwQyY2m5hDZbtP0D/SLnyfVJk6BlHmlEB+5VD6w3aWj+RFT/q/ApvtfJYnHnCzmZzcaNbfBnnOTUp8SmrnNYKQFtWGy/rr2q2X4ObNXgN57PvzE1xoG4T+ozxjEdZ/mHuWqve5SFFD+URcCY+lyNloQsVTbDiDt+3sPBPCw==
+  #sshconfig
+  puppetsshconfig:
+    config:
+      path: /root/.ssh/config
+      ensure: present
+      owner: root
+      group: root
+      mode: '0600'
+      content: |
+        Host puppet.example.com
+        User git
+        IdentityFile /root/.ssh/puppetdeploy_rsa
+        Host gitlab.example.com
+        User git
+        IdentityFile /etc/ssh/ssh_host_rsa_key
+
